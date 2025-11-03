@@ -1,0 +1,152 @@
+
+:root {
+  --color-primary: #6EC1E4;     /* azul claro */
+  --color-secondary: #61CE70;   /* verde */
+  --color-text: #54595F;        /* cinza escuro */
+  --color-white: #FFFFFF;
+  --color-cta: #E98427;         /* laranja */
+  
+  --font-title: 'Roboto', sans-serif;
+  --font-subtitle: 'Roboto Slab', serif;
+  --font-body: 'Open Sans', 'Lato', sans-serif;
+}
+
+
+
+/* ======= FONTES ======= */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--color-cta);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======= CONTAINER GERAL ======= */
+.container {
+  display: flex;
+  background-color: var(--color-white);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  width: 1300px;
+  height: 820px;
+}
+
+/* ======= LOGO E ÁREA VISUAL ======= */
+.logo-area {
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  padding: 40px;
+}
+
+.logo {
+  width: 300px; /* ← ALTERAÇÃO FEITA AQUI */
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
+
+/* ======= FORMULÁRIO ======= */
+.form-area {
+  width: 55%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  color: #54595F;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: 'Roboto Slab',;
+  color: #54595F;
+  margin-bottom: 30px;
+}
+
+label {
+  font-weight: bold;
+  color: #54595F;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  outline-color: #6EC1E4;
+}
+
+button {
+  background-color: #E98427;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #d8741e;
+  transform: translateY(-2px);
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: #54595F;
+  outline-color: #6EC1E4;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%2354595F' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+
+/* ===== CAMPOS LADO A LADO ===== */
+.row {
+  display: flex;
+  gap: 60px; /* Espaço entre os dois campos */
+  margin-bottom: 05px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mantém responsivo em telas pequenas */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.to-login{
+margin: 10px;
+}
