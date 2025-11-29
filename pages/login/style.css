@@ -32,8 +32,8 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     border-radius: 20px;
     overflow: hidden;
-    width: 1300px;
-    height: 820px;
+    width: 92%;
+    height: 95%;
   }
   
   /* ======= LOGO E ÁREA VISUAL ======= */
@@ -155,3 +155,18 @@
 
 
 
+.to-login {
+  margin: 5px 0 15px 0;
+  text-align: right;
+  font-size: 14px;
+}
+
+.to-login a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.to-login a:hover {
+  text-decoration: underline;
+}

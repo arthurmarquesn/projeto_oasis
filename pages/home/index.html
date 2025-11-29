@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="cont">
+                <img src="../../src/Logo.png" alt="Foto" class="profile">
+            </div>
+            
+            
+            <h1 class="marca">Oasis BJJ</h1>
+            <p>Administrador</p>
+        </div>
+
+        <button class="nav-btnin" onclick="location.href='index.html'">
+            Dashboard
+        </button>
+
+        <button class="nav-btn" onclick="location.href='outraPagina.html'">
+            Criar Campeonato
+        </button>
+
+        <!-- Botão para minimizar -->
+        <button class="toggle-btn" onclick="toggleSidebar()">X</button>
+    </aside>
+
+    <!-- BOTÃO PARA REABRIR -->
+    <button id="openButton" class="open-button" onclick="toggleSidebar()">☰</button>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="content">
+
+        <h2 class="dash-title">Dashboard Geral</h2>
+
+        <!-- CARDS -->
+        <div class="cards-wrapper">
+
+            <div class="card">
+                <h3>Atletas</h3>
+                <p>120</p>
+            </div>
+
+            <div class="card">
+                <h3>Masculinos</h3>
+                <p>85</p>
+            </div>
+
+            <div class="card">
+                <h3>Femininos</h3>
+                <p>35</p>
+            </div>
+
+            <div class="card">
+                <h3>Campeonatos</h3>
+                <p>12</p>
+            </div>
+
+        </div>
+
+        <!-- GRÁFICOS -->
+        <div class="charts-wrapper">
+            
+            <div class="chart-box">
+                <h3>Atletas por Faixa</h3>
+                <canvas id="faixaChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Categorias de Peso</h3>
+                <canvas id="pesoChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="home.js"></script>
+</body>
+</html>

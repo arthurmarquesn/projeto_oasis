@@ -1,152 +1,200 @@
-
 :root {
-  --color-primary: #6EC1E4;     /* azul claro */
-  --color-secondary: #61CE70;   /* verde */
-  --color-text: #54595F;        /* cinza escuro */
+  --color-primary: #6EC1E4;
+  --color-secondary: #61CE70;
+  --color-text: #4A4A4A;
   --color-white: #FFFFFF;
-  --color-cta: #E98427;         /* laranja */
-  
+  --color-cta: #E98427;
+
   --font-title: 'Roboto', sans-serif;
-  --font-subtitle: 'Roboto Slab', serif;
-  --font-body: 'Open Sans', 'Lato', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
-
-
-/* ======= FONTES ======= */
+/* ======== GERAL ======== */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-cta);
   margin: 0;
   padding: 0;
-  height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  height: 100vh;
 }
 
-/* ======= CONTAINER GERAL ======= */
+/* ======== CONTAINER ======== */
 .container {
   display: flex;
   background-color: var(--color-white);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   border-radius: 20px;
   overflow: hidden;
-  width: 1300px;
-  height: 820px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+  width: 92%;
+ height: 95%;
+
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* ======= LOGO E ÁREA VISUAL ======= */
+/* Fade suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== LOGO AREA ======== */
 .logo-area {
   background: var(--color-white);
+  width: 38%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45%;
-  padding: 40px;
+  padding: 25px;
+  
 }
 
 .logo {
-  width: 300px; /* ← ALTERAÇÃO FEITA AQUI */
-  height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  width: auto;
+  height: 100px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
 }
 
-/* ======= FORMULÁRIO ======= */
+/* ======== FORM AREA ======== */
 .form-area {
-  width: 55%;
-  padding: 50px;
+  width: 62%;
+  padding: 40px 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
-  color: #54595F;
-  font-size: 32px;
-  margin-bottom: 10px;
+  margin: 0 0 20px 0;
+  font-family: var(--font-title);
+  color: var(--color-text);
+  font-size: 28px;
+  font-weight: 600;
 }
 
-p {
-  font-family: 'Roboto Slab',;
-  color: #54595F;
-  margin-bottom: 30px;
-}
-
+/* ======== FORM ELEMENTS ======== */
 label {
-  font-weight: bold;
-  color: #54595F;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text);
   margin-bottom: 5px;
   display: block;
 }
 
-input {
+input, select {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  padding: 13px;
+  margin-bottom: 14px;
+  border: 1px solid #dcdcdc;
   border-radius: 10px;
-  font-size: 16px;
-  outline-color: #6EC1E4;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
 }
 
+input:focus, select:focus {
+  border-color: var(--color-primary);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* ======== BUTTON ======== */
 button {
-  background-color: #E98427;
-  color: white;
-  border: none;
+  background-color: var(--color-cta);
+  color: var(--color-white);
   padding: 14px;
+  border: none;
   width: 100%;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 10px;
+  transition: all 0.25s ease;
 }
 
 button:hover {
-  background-color: #d8741e;
+  background-color: #CF6B17;
   transform: translateY(-2px);
 }
 
-select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: white;
-  color: #54595F;
-  outline-color: #6EC1E4;
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='%2354595F' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 18px;
-}
-
-
-/* ===== CAMPOS LADO A LADO ===== */
+/* ======== CAMPOS LADO A LADO ======== */
 .row {
   display: flex;
-  gap: 60px; /* Espaço entre os dois campos */
-  margin-bottom: 05px;
+  gap: 30px;
 }
 
 .input-group {
   flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Mantém responsivo em telas pequenas */
+/* ======== LOGIN LINK ======== */
+.to-login {
+  margin: 5px 0 15px 0;
+  text-align: right;
+  font-size: 14px;
+}
+
+.to-login a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.to-login a:hover {
+  text-decoration: underline;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    max-width: 480px;
+  }
+
+  .logo-area {
+    width: 100%;
+    padding: 25px;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .form-area {
+    width: 100%;
+    padding: 35px;
+  }
+}
+
 @media (max-width: 600px) {
   .row {
     flex-direction: column;
     gap: 0;
   }
+
+  h1 {
+    font-size: 24px;
+  }
 }
 
-.to-login{
-margin: 10px;
+
+.title-over-logo {
+  font-family: var(--font-title);
+  font-size: 26px;
+  margin-bottom: 100px;
+  color: var(--color-text);
+}
+
+.logo-area {
+  background: var(--color-white);
+  width: 40%;
+  display: flex;
+  flex-direction: column; /* IMPORTANTE */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
